@@ -1,0 +1,62 @@
+.form {
+  margin: auto;
+  max-width: 358px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.form__title {
+  margin: 0 0 50px;
+  align-self: center;
+}
+
+.form__field {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.form__field:last-of-type {
+  margin-bottom: 216px;
+}
+
+.form__btn {
+  margin-bottom: 112px;
+  width: 100%;
+}
+
+.form__btn_type_register {
+  margin-bottom: 15px;
+}
+
+.form__registered {
+  margin-bottom: 80px;
+  width: 100%;
+  align-self: center;
+  border: none;
+  font-weight: 400;
+  font=size: 14px;
+  line-height: 1.21;
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+  text-align: center;
+}
+@media screen and (max-width: 751px) {
+  .form {
+    margin-top: 0;
+    padding: 0 30px;
+  }
+
+  .form__field:last-of-type {
+    margin-bottom: 173px;
+  }
+
+  .form__title {
+    margin: 0 0 40px;
+  }
+
+  .form__btn_type_register {
+    margin-bottom: 20px;
+  }
+}

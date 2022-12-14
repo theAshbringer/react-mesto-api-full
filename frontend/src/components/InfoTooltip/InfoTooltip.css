@@ -1,0 +1,30 @@
+.info-popup {
+  align-items: center;
+  max-width: 430px;
+  width: 100%;
+  padding: 60px 36px;
+}
+
+.info-popup__title {
+  margin: 0;
+  text-align: center;
+  font-weight: 900;
+}
+
+.info-popup__logo {
+  margin-bottom: 32px;
+}
+
+@media screen and (max-width: 751px) {
+  .info-popup {
+    padding: 50px 18px;
+  }
+
+  .info-popup__title {
+    font-size: 20px;
+  }
+
+  .info-popup__logo {
+    margin-bottom: 40px;
+  }
+}
