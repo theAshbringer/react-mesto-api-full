@@ -58,7 +58,6 @@ export const authorize = ({ password, email }) => {
 }
 
 export const getContent = () => {
-  console.log('getContent');
   return fetch(`${BASE_URL}/users/me`, {
     method: 'GET',
     credentials: 'include',
@@ -70,7 +69,6 @@ export const getContent = () => {
 }
 
 export const logout = () => {
-  console.log('logout');
   return fetch(`${BASE_URL}/logout`, {
     credentials: 'include',
   })
