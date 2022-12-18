@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const { errors } = require('celebrate');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
+const helmet = require('helmet');
 const routes = require('./routes');
 const { MSG_ROUTE_NOT_FOUND } = require('./utils/constants');
 const NotFoundError = require('./errors/not-found-err');
@@ -16,6 +17,7 @@ require('dotenv').config();
 const { PORT = 3000 } = process.env;
 
 const app = express();
+app.use(helmet());
 app.use(cors(corsOptions));
 
 app.use(bodyParser.json());
@@ -34,9 +36,9 @@ app.get('/crash-test', () => {
 
 app.use(routes);
 
+app.use((req, res, next) => next(new NotFoundError(MSG_ROUTE_NOT_FOUND)));
 app.use(errorLogger);
 app.use(errors()); // handling Joi errors
-app.use((req, res, next) => next(new NotFoundError(MSG_ROUTE_NOT_FOUND)));
 app.use(errorHandler);
 
 app.listen(PORT);
